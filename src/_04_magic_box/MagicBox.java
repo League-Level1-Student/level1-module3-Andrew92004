@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class MagicBox extends JPanel implements Runnable, MouseListener {
-
+MediaPalace bleh = new MediaPalace();
 	/*
 	 * We are going to hide secrets within the magic box. 
 	 * When the user clicks on a secret place, stuff will happen.
@@ -51,6 +51,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 		JFrame frame = new JFrame("The Magic Box contains many secrets...");
 		frame.add(this);
 		setPreferredSize(new Dimension(backgroundImage.getWidth(), backgroundImage.getHeight()));
+		frame.addMouseListener(this);
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -73,13 +74,21 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getX()>0 && e.getX()< 100 && e.getY()>0 && e.getY()<100) {
+		bleh.speak("oh");
+	}
+		if(e.getX()>200 && e.getX()< 300 && e.getY()>200 && e.getY()<300) {
+		bleh.speak("oh");
+	}
+		if(e.getX()>800 && e.getX()< 900 && e.getY()>800 && e.getY()<900) {
+		bleh.speak("oh");
+	}
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
